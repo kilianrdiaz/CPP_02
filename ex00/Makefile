@@ -20,11 +20,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile $(INC_DIR)/Fixed.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
-	rm -rf $(OBJ_DIR)
 
 re: fclean all
 
