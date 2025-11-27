@@ -131,7 +131,7 @@ Fixed Fixed::operator/(const Fixed &other) const
     return result;
 }
 
-Fixed &Fixed::operator++()
+Fixed &Fixed::operator++(void)
 {
     _fpvalue++;
     return *this;
@@ -144,7 +144,7 @@ Fixed Fixed::operator++(int)
     return temp;
 }
 
-Fixed &Fixed::operator--()
+Fixed &Fixed::operator--(void)
 {
     _fpvalue--;
     return *this;
@@ -159,20 +159,32 @@ Fixed Fixed::operator--(int)
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
-    return (a < b ? a : b);
+    if (a < b)
+        return a;
+    else
+        return b;
 }
 
 const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
-    return (a < b ? a : b);
+    if (a < b)
+        return a;
+    else
+        return b;
 }
 
 Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
-    return (a > b ? a : b);
+    if (a > b)
+        return a;
+    else
+        return b;
 }
 
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
-    return (a > b ? a : b);
+    if (a > b)
+        return a;
+    else
+        return b;
 }
