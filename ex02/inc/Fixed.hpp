@@ -30,19 +30,16 @@ class Fixed
         bool operator==(const Fixed &other) const;
         bool operator!=(const Fixed &other) const;
 
-        // Aritméticos
         Fixed operator+(const Fixed &other) const;
         Fixed operator-(const Fixed &other) const;
         Fixed operator*(const Fixed &other) const;
         Fixed operator/(const Fixed &other) const;
 
-        // Incremento / decremento
-        Fixed &operator++();      // pre-incremento
-        Fixed operator++(int);    // post-incremento
-        Fixed &operator--();      // pre-decremento
-        Fixed operator--(int);    // post-decremento
+        Fixed &operator++();
+        Fixed operator++(int);
+        Fixed &operator--();
+        Fixed operator--(int);
 
-        // Funciones min/max
         static Fixed &min(Fixed &a, Fixed &b);
         static const Fixed &min(const Fixed &a, const Fixed &b);
         static Fixed &max(Fixed &a, Fixed &b);

@@ -1,4 +1,4 @@
-NAME    = fixedConstructors
+NAME    = fixedConstructors2.0
 CXX     = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
 
@@ -14,7 +14,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-# Regla para compilar .cpp a .o dentro de obj/
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile $(INC_DIR)/Fixed.hpp
 	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
